@@ -1,12 +1,28 @@
 {
   "name": "burger-queen",
   "version": "0.0.0",
+  "description": "Aplicacion para facilitar el flujo de trabajo de un restaurante de comidas rapidas",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "keywords": [
+    "burger queen",
+    "angular",
+    "restaurant"
+  ],
+  "author": "dsandovalm",
+  "license": "ISC",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+dsandovalm/BOG002-burger-queen.git"
   },
   "private": true,
   "dependencies": {
