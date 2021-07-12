@@ -1,0 +1,20 @@
+$color-red: #D03425;
+$color-yellow: #FFCB12;
+$color-purple: #1f1d2b;
+$color-dark: #252836;
+
+header {
+    background-color: red;
+    width:100%;
+    display: flex;
+}
+
+h2 {
+    color: $color-yellow;
+}
+button {
+    background-color: $color-yellow;
+    border: none;
+    width:180px;
+    color:$color-purple;
+}
