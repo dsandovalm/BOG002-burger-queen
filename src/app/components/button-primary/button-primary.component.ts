@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-button-primary',
@@ -6,7 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./button-primary.component.scss']
 })
 export class ButtonPrimaryComponent implements OnInit {
-  text= 'algo';
+  @Input() text: string = '';
   constructor() { }
 
   ngOnInit(): void {

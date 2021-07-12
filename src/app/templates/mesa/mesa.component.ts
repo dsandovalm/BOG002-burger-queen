@@ -7,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MesaComponent implements OnInit {
 
+  btnNewOrder:string = 'NUEVO PEDIDO';
+  btnEditOrder:string = 'EDITAR PEDIDO';
   constructor() { }
 
   ngOnInit(): void {

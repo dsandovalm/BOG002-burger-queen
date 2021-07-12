@@ -8,6 +8,7 @@ import { MesaComponent } from './templates/mesa/mesa.component';
 import { CocinaComponent } from './templates/cocina/cocina.component';
 import { OrderComponent } from './components/order/order.component';
 import { ButtonPrimaryComponent } from './components/button-primary/button-primary.component';
+import { HeaderComponent } from './components/header/header.component';
 
 @NgModule({
   declarations: [
@@ -17,6 +18,7 @@ import { ButtonPrimaryComponent } from './components/button-primary/button-prima
     CocinaComponent,
     OrderComponent,
     ButtonPrimaryComponent,
+    HeaderComponent,
   ],
   imports: [
     BrowserModule,

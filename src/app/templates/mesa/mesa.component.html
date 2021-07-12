@@ -1,16 +1,14 @@
 <section>
-    <header>
-        <h1>Header</h1>
-       <a href=""><button>Volver</button></a>
-    </header>
-    <div>
-        <div>
-            <app-button-primary></app-button-primary>
-            <button>Nuevo pedido</button>
-            <button>Editar pedido</button>
+    <header></header>
+    <div class="container">
+        <div class="btns">
+            <app-button-primary [text]= 'btnNewOrder' ></app-button-primary>
+            <app-button-primary [text]= 'btnEditOrder' ></app-button-primary>
         </div>
-        <div>
+        <div class="content">
             <h2>Por entregar</h2>
+            <app-order></app-order>
+            <app-order></app-order>
             <app-order></app-order>
         </div>
     </div>

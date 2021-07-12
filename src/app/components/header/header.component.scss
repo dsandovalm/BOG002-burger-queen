@@ -1,0 +1,32 @@
+
+$color-red: #D03425;
+$color-yellow: #FFCB12;
+$color-purple: #1f1d2b;
+$color-dark: #252836;
+
+.container {
+    background:$color-red;
+    width:100%;
+    height: 8vh;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+h2 {
+    padding: 10px 50px;
+    margin: 0;
+    font-size: 40px;
+    color: $color-yellow;
+}
+button {
+    margin-top: 10px;
+    margin-right: 10px;
+    background-color: $color-yellow;
+    border: none;
+    font-size: 20px;
+    color:$color-purple;
+}
+a {
+    text-decoration: none;
+}

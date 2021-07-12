@@ -1,7 +1,16 @@
 $color-primary: #D03425;
 
 button {
-    width: 200px;
+    width: 300px;
     height: 80px;
-    background: $color-primary;
+    border-radius: 8px;
+    border: $color-primary solid 2px;
+    color: $color-primary;
+    font-size: 28px;
+    background: transparent;
+  &:hover {
+      background: $color-primary;
+      color: #ffff;
+      box-shadow: 0px 8px 24px rgba(234, 124, 105, 0.4);
+  }
 }
