@@ -3,18 +3,45 @@ $color-yellow: #FFCB12;
 $color-purple: #1f1d2b;
 $color-dark: #252836;
 
-header {
-    background-color: red;
-    width:100%;
+* {
+    box-sizing: border-box;
+    margin: 0;
+}
+
+section {
+    background-color: $color-red;
+    width: 100%;
     display: flex;
+    padding: 10px;
 }
 
 h2 {
     color: $color-yellow;
+    width: 50%;
 }
+
 button {
     background-color: $color-yellow;
     border: none;
-    width:180px;
-    color:$color-purple;
+    width: 20%;
+    color: $color-purple;
+}
+
+.controls {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.buttons {
+    width: 100%;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+}
+
+p {
+    padding: 10px;
+    text-align: right;
 }
