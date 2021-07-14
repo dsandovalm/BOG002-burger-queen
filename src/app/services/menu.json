@@ -1,0 +1,55 @@
+{
+    "principal " : {
+
+        "Hamburguesas" : {
+            "items": {
+                "Sencilla" : 10,
+                "Doble" : 15,
+            },
+            
+            "Opciones" : {
+                "Tipos" : ["Pollo", "Carne", "Vegetariana"],
+                "Adiciones" : {
+                    "Huevo" : 1,
+                    "Queso" : 1,
+                },
+            }
+        },
+
+        "Bebidas" : {
+            "items" : {
+                "Agua 500 ml" : 5,
+                "Agua 750 ml" : 7,
+                "Gaseosa 500 ml" : 7,
+                "Gaseosa 750 ml" : 10,
+                "Jarra de Jugo" : 20,
+            }
+        },
+
+        "Acompañamientos" : {
+            "items" : {
+                "Papas fritas" : 5,
+                "Aros de Cebolla" : 5
+            }  
+        },
+    },
+
+    "desayunos" : {
+        "Sandwiches" : {
+            "items" : {
+                "Jamón y queso" : 10,
+                "Hawaiano" : 10, 
+                "Champiñon y queso" : 10,
+            }
+        },
+        "Bebidas" : {
+            "items": {
+                "Café Americano" : 5,
+                "Café con Leche" : 7,
+                "Jugo de frutas natural" : 7, 
+            }  
+        },
+        
+          
+    }  
+}
