@@ -1,1 +1,28 @@
-/* You can add global styles to this file, and also import other style files */
+@import 'app/components/menu/menu.component';
+@import 'app/services/colores';
+
+*{
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+}
+
+.light-theme{
+    background-color: $light-bg;
+    color: $light-text;
+    .submenu {
+        background-color: $light-section;
+        border: $light-section solid 1px;
+    }
+}
+
+.dark-theme{
+    background-color: $dark-bg;
+    color: $dark-text;
+    .submenu {
+        background-color: $dark-section;
+        border: $dark-section solid 1px;
+    }
+}

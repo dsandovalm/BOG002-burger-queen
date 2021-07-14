@@ -1,0 +1,10 @@
+<div class="container">
+    <h3>{{ titulo }}</h3>
+    <ul>
+        <li *ngFor="let producto of items">
+            <span class="prod-item">{{producto.item}}</span>
+            <button class="btn-additem">+</button>
+            <span class="prod-precio">{{producto.precio | currency}}</span>
+        </li>
+    </ul>
+</div>
