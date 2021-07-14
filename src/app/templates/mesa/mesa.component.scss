@@ -26,3 +26,13 @@ h2 {
     align-items: center;
     height: 75vh;
 }
+
+.menu {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+}
+.menu div {
+    width: 50%;
+    flex: 0 0  auto;
+}

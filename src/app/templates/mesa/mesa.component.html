@@ -7,9 +7,16 @@
         </div>
         <div class="content">
             <h2>Por entregar</h2>
-            <app-order></app-order>
-            <app-order></app-order>
-            <app-order></app-order>
+        </div>
+        
+        <div> 
+            <h2>Menú</h2>
+            <button (click)="switchMenu()">Cambiar menú</button>
+            <div class="menu">
+                <div *ngFor="let submenu of getActivo()" >
+                    <app-menu [titulo]=submenu.categoria [items]=submenu.items></app-menu>
+                </div>
+            </div>
         </div>
     </div>
 
