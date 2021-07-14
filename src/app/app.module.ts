@@ -9,6 +9,7 @@ import { CocinaComponent } from './templates/cocina/cocina.component';
 import { OrderComponent } from './components/order/order.component';
 import { ButtonPrimaryComponent } from './components/button-primary/button-primary.component';
 import { HeaderComponent } from './components/header/header.component';
+import { MenuComponent } from './components/menu/menu.component';
 
 @NgModule({
   declarations: [
@@ -19,6 +20,7 @@ import { HeaderComponent } from './components/header/header.component';
     OrderComponent,
     ButtonPrimaryComponent,
     HeaderComponent,
+    MenuComponent,
   ],
   imports: [
     BrowserModule,
