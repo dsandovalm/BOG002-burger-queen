@@ -1,4 +1,32 @@
+// @import 'app/components/menu/menu.component';
+// @import 'app/components/order/order.component';
+// @import 'app/templates/cocina/cocina.component';
+// @import 'app/templates/mesa/mesa.component';
 
 body {
     margin: 0;
 }
+
+.light-theme {
+    .template-cocina, .template-mesa{
+        background: #fff;
+        color: black ;
+        border: solid 1px black ; 
+    }
+    .container, .container-orden {
+        background: pink;
+    }
+        
+}
+.dark-theme{
+    .template-cocina, .template-mesa{
+        background: #000;
+        color: white;
+        border: solid 1px white;
+    }
+    .container, .conteiner-orden {
+        background: gray ;
+    }
+        
+}
+    

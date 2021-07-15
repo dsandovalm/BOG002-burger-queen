@@ -12,6 +12,9 @@ $color-dark: #252836;
     flex-direction: row;
     justify-content: space-between;
 }
+.container div:first-child{
+    margin-right: 80px;
+}
 
 h2 {
     padding: 10px 50px;
@@ -29,4 +32,9 @@ button {
 }
 a {
     text-decoration: none;
+}
+details {
+    background: $color-yellow;
+    width: 30px;
+    
 }
