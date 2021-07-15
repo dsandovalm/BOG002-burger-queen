@@ -1,4 +1,5 @@
-import { Component, OnInit, HostBinding } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { ThemeService } from 'src/app/services/theme.service';
 
 @Component({
   selector: 'header',
@@ -7,9 +8,19 @@ import { Component, OnInit, HostBinding } from '@angular/core';
 })
 export class HeaderComponent implements OnInit {
 
-  constructor() { }
+  componentClass: string= 'dark-theme';
+  
+  constructor( private ThemeService: ThemeService )
+   { }
 
-  ngOnInit(): void {
+  ngOnInit() {
+    this.ThemeService.changeClass.subscribe(componentClass => {
+      this.componentClass = componentClass;
+    })
   }
+
+  public onThemeChange(e:string){
+    this.ThemeService.onChange(e);
+  } 
 
 }

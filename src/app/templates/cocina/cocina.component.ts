@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, HostBinding } from '@angular/core';
+import { ThemeService } from 'src/app/services/theme.service';
 
 @Component({
   selector: 'app-cocina',
@@ -7,9 +8,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CocinaComponent implements OnInit {
 
-  constructor() { }
+  @HostBinding('class') componentCssClass: string = 'dark-theme';
+
+  constructor(private ThemeService: ThemeService) { }
 
   ngOnInit(): void {
+    this.ThemeService.changeClass.subscribe(componentClass => {
+      this.componentCssClass = componentClass;
+    })
+
   }
 
 }
