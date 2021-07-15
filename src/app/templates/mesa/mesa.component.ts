@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, HostBinding } from '@angular/core';
 import menuData from 'src/app/services/menu.json'
 
 @Component({
@@ -9,6 +9,7 @@ import menuData from 'src/app/services/menu.json'
 export class MesaComponent implements OnInit {
   menu:any = menuData;
   tipo:string = 'principal';
+  @HostBinding('class') componentCssClass:any = 'dark-theme';
 
   btnNewOrder:string = 'NUEVO PEDIDO';
   btnEditOrder:string = 'EDITAR PEDIDO';
@@ -27,4 +28,11 @@ export class MesaComponent implements OnInit {
     this.tipo = this.tipo === 'principal' ? this.tipo = 'desayunos' : this.tipo = 'principal';
   }
 
+<<<<<<< HEAD
+=======
+  public onThemeChange(e:string){
+    this.componentCssClass = e;
+  } 
+
+>>>>>>> d9a9bea5224f95885e4ce83bdfa5bcc0f5fb947b
 }

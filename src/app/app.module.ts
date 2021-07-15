@@ -6,7 +6,6 @@ import { AppComponent } from './app.component';
 import { InicioComponent } from './templates/inicio/inicio.component';
 import { MesaComponent } from './templates/mesa/mesa.component';
 import { CocinaComponent } from './templates/cocina/cocina.component';
-import { OrderComponent } from './components/order/order.component';
 import { ButtonPrimaryComponent } from './components/button-primary/button-primary.component';
 import { HeaderComponent } from './components/header/header.component';
 import { MenuComponent } from './components/menu/menu.component';
@@ -17,10 +16,9 @@ import { MenuComponent } from './components/menu/menu.component';
     InicioComponent,
     MesaComponent,
     CocinaComponent,
-    OrderComponent,
     ButtonPrimaryComponent,
     HeaderComponent,
-    MenuComponent
+    MenuComponent,
   ],
   imports: [
     BrowserModule,

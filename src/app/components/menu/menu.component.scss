@@ -1,4 +1,6 @@
-.container-menu {
+@import '../../services/colores.scss';
+
+.container {
     padding:20px
 }
 h3 {
@@ -27,6 +29,11 @@ li {
 .btn-additem {
     width: 30px;
     height: 30px;
+<<<<<<< HEAD
+=======
+    background-color: $main-button;
+    color: #fff;
+>>>>>>> d9a9bea5224f95885e4ce83bdfa5bcc0f5fb947b
 }
 .prod-precio {
     width: 60px;

@@ -1,32 +1,28 @@
-// @import 'app/components/menu/menu.component';
-// @import 'app/components/order/order.component';
-// @import 'app/templates/cocina/cocina.component';
-// @import 'app/templates/mesa/mesa.component';
+@import 'app/components/menu/menu.component';
+@import 'app/services/colores';
+
+*{
+    box-sizing: border-box;
+}
 
 body {
     margin: 0;
 }
 
-.light-theme {
-    .template-cocina, .template-mesa{
-        background: #fff;
-        color: black ;
-        border: solid 1px black ; 
+.light-theme{
+    background-color: $light-bg;
+    color: $light-text;
+    .submenu {
+        background-color: $light-section;
+        border: $light-section solid 1px;
     }
-    .container, .container-orden {
-        background: pink;
-    }
-        
 }
+
 .dark-theme{
-    .template-cocina, .template-mesa{
-        background: #000;
-        color: white;
-        border: solid 1px white;
+    background-color: $dark-bg;
+    color: $dark-text;
+    .submenu {
+        background-color: $dark-section;
+        border: $dark-section solid 1px;
     }
-    .container, .conteiner-orden {
-        background: gray ;
-    }
-        
 }
-    

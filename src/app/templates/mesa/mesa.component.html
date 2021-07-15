@@ -1,11 +1,13 @@
-<section class="template-mesa">
+<section style= "background: inherit">
     <header></header>
+    <button (click)="onThemeChange('light-theme')" >Tema Claro</button>
+    <button (click)="onThemeChange('dark-theme')" >Tema Oscuro</button>
     <div class="container">
         <div class="btns">
             <app-button-primary [text]= 'btnNewOrder' ></app-button-primary>
             <app-button-primary [text]= 'btnEditOrder' ></app-button-primary>
         </div>
-        <div class="content-mesa">
+        <div class="content">
             <h2>Por entregar</h2>
         </div>
         
@@ -13,7 +15,7 @@
             <h2>Menú</h2>
             <button (click)="switchMenu()">Cambiar menú</button>
             <div class="menu">
-                <div *ngFor="let submenu of getActivo()" >
+                <div *ngFor="let submenu of getActivo()" class="submenu">
                     <app-menu [titulo]=submenu.categoria [items]=submenu.items></app-menu>
                 </div>
             </div>
