@@ -1,0 +1,11 @@
+.menu {
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: space-around;
+    height: 600px;
+    width: 100%;
+}
+.menu div {
+    width: 50%;
+    flex: 0 0  auto;
+}

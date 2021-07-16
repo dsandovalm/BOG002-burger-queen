@@ -1,0 +1,19 @@
+$color-primary: #D03425;
+$color-secondary:#FFCB12;
+$background-color:#252836;
+$base-color:#1F1D2B;
+$text-color:#C4C4C4;
+
+.container {
+    background: $background-color;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 92vh;
+}
+h2 {
+    color:$color-primary;
+    font-weight: bolder;
+    font-size: 50px;
+}
+
