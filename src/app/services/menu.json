@@ -25,6 +25,22 @@
             }
         },
         {
+<<<<<<< HEAD
+=======
+            "categoria": "Acompañamientos",
+            "items": [
+                {
+                    "item": "Papas fritas",
+                    "precio": 5
+                },
+                {
+                    "item": "Aros de Cebolla",
+                    "precio": 5
+                }
+            ]
+        },
+        {
+>>>>>>> develop
             "categoria": "Bebidas",
             "items": [
                 {
@@ -48,6 +64,7 @@
                     "precio": 20
                 }
             ]
+<<<<<<< HEAD
         },
         {
             "categoria": "Acompañamientos",
@@ -61,6 +78,8 @@
                     "precio": 5
                 }
             ]
+=======
+>>>>>>> develop
         }
     ],
     "desayunos": [

@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 import { Component, OnInit } from '@angular/core';
+=======
+import { Component, OnInit, HostBinding } from '@angular/core';
+>>>>>>> develop
 
 @Component({
   selector: 'header',

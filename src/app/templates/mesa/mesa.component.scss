@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 $color-primary: #D03425;
 $color-secondary:#FFCB12;
 $background-color:#252836;
@@ -8,6 +9,9 @@ $text-color:#C4C4C4;
     background: $background-color;
     height: 92vh;
 }
+=======
+@import '../../services/colores.scss';
+>>>>>>> develop
 
 .btns {
     display: flex;
@@ -15,7 +19,11 @@ $text-color:#C4C4C4;
     justify-content: space-around;
 }
 h2 {
+<<<<<<< HEAD
     color:$color-primary;
+=======
+    color:$main-primary;
+>>>>>>> develop
     font-weight: bolder;
     font-size: 50px;
     margin: 0;
@@ -26,6 +34,7 @@ h2 {
     align-items: center;
     height: 75vh;
 }
+<<<<<<< HEAD
 
 .menu {
     display: flex;
@@ -36,3 +45,5 @@ h2 {
     width: 50%;
     flex: 0 0  auto;
 }
+=======
+>>>>>>> develop

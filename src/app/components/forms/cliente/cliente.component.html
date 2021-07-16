@@ -1,0 +1,18 @@
+<div class="container">
+    <form [formGroup]="clienteForm" (ngSubmit)="onSubmit()">
+        <div>
+            <p>
+                <label for="name">Nombre del cliente</label>
+                <input id="name" type="text" formControlName="nombre">
+            </p>
+            <p>
+                <label for="mesa">Número de mesa</label>
+                <input id="mesa" type="number" formControlName="mesa">
+            </p>
+        </div> 
+        <div>
+            <div class="btn" (click)="closePopUp()">Cancelar</div>
+            <button class="btn" type="submit" [disabled]="!clienteForm.valid">Submit</button>
+        </div>
+    </form>
+</div>
