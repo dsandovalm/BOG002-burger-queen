@@ -1,0 +1,102 @@
+{
+    "principal": [
+        {
+            "categoria": "Hamburguesas",
+            "items": [
+                {
+                    "item": "Sencilla",
+                    "precio": 10
+                },
+                {
+                    "item": "Doble",
+                    "precio": 15
+                }
+            ],
+            "Opciones": {
+                "Tipos": [
+                    "Pollo",
+                    "Carne",
+                    "Vegetariana"
+                ],
+                "Adiciones": {
+                    "Huevo": 1,
+                    "Queso": 1
+                }
+            }
+        },
+        {
+            "categoria": "Bebidas",
+            "items": [
+                {
+                    "item": "Agua 500 ml",
+                    "precio": 5
+                },
+                {
+                    "item": "Agua 750 ml",
+                    "precio": 7
+                },
+                {
+                    "item": "Gaseosa 500 ml",
+                    "precio": 7
+                },
+                {
+                    "item": "Gaseosa 750 ml",
+                    "precio": 10
+                },
+                {
+                    "item": "Jarra de Jugo",
+                    "precio": 20
+                }
+            ]
+        },
+        {
+            "categoria": "Acompañamientos",
+            "items": [
+                {
+                    "item": "Papas fritas",
+                    "precio": 5
+                },
+                {
+                    "item": "Aros de Cebolla",
+                    "precio": 5
+                }
+            ]
+        }
+    ],
+    "desayunos": [
+        {
+            "categoria": "Sandwiches",
+            "items": [
+                {
+                    "item": "Jamón y queso",
+                    "precio": 10
+                },
+                {
+                    "item": "Hawaiano",
+                    "precio": 10
+                },
+                {
+                    "item": "Champiñon y queso",
+                    "precio": 10
+                }
+            ]
+        },
+        {
+            "categoria": "Bebidas",
+            "items": [
+                {
+                    "item": "Café Americano",
+                    "precio": 5
+                },
+                {
+                    "item": "Café con Leche",
+                    "precio": 7
+                },
+                {
+                    "item": "Jugo de frutas natural",
+                    "precio": 7
+                }
+            ]
+        }
+    ]
+}

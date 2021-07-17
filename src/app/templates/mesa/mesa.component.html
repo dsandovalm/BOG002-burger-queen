@@ -1,0 +1,23 @@
+<section style= "background: inherit">
+    <header></header>
+    <app-pop-up></app-pop-up>
+    <div class="container">
+        <!-- 3 estados:
+            Inicial: 
+                Botones
+                Pedidos por entregar
+            Orden:
+                Menu 
+                Comanda
+            Edit: 
+                Pedidos editables
+        -->
+        <div *ngIf="state == 'inicial'">
+            <app-inicial></app-inicial>
+        </div>
+        <div *ngIf="state == 'orden'">
+            <app-orden></app-orden>
+        </div>
+        
+    </div>
+</section>
