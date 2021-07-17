@@ -3,8 +3,11 @@
     <div>
         <div class="buttons">
             <button id="btn-hist">Historial</button>
-            <button id="btn-help">?</button>
-            <button id="btn-sett">C</button>
+            <details>
+                <summary>Config</summary>
+                <button id="btn-help" (click)="onThemeChange('dark-theme')" >Dark</button>
+                <button id="btn-sett" (click)="onThemeChange('light-theme')">Light</button>
+            </details>
             <button id="btn-close">
                 <a href="./">X</a>
             </button>
