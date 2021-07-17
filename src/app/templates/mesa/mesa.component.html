@@ -1,25 +1,23 @@
 <section style= "background: inherit">
     <header></header>
-    <button (click)="onThemeChange('light-theme')" >Tema Claro</button>
-    <button (click)="onThemeChange('dark-theme')" >Tema Oscuro</button>
+    <app-pop-up></app-pop-up>
     <div class="container">
-        <div class="btns">
-            <app-button-primary [text]= 'btnNewOrder' ></app-button-primary>
-            <app-button-primary [text]= 'btnEditOrder' ></app-button-primary>
+        <!-- 3 estados:
+            Inicial: 
+                Botones
+                Pedidos por entregar
+            Orden:
+                Menu 
+                Comanda
+            Edit: 
+                Pedidos editables
+        -->
+        <div *ngIf="state == 'inicial'">
+            <app-inicial></app-inicial>
         </div>
-        <div class="content">
-            <h2>Por entregar</h2>
+        <div *ngIf="state == 'orden'">
+            <app-orden></app-orden>
         </div>
         
-        <div> 
-            <h2>Menú</h2>
-            <button (click)="switchMenu()">Cambiar menú</button>
-            <div class="menu">
-                <div *ngFor="let submenu of getActivo()" class="submenu">
-                    <app-menu [titulo]=submenu.categoria [items]=submenu.items></app-menu>
-                </div>
-            </div>
-        </div>
     </div>
-
 </section>

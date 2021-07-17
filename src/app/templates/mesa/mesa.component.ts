@@ -1,47 +1,33 @@
-import { Component, OnInit, HostBinding, Renderer2, ViewChild, ElementRef } from '@angular/core';
+import { Component, OnInit, HostBinding } from '@angular/core';
+import { EstadosMesaService } from 'src/app/services/estados-mesa.service';
 import { ThemeService } from 'src/app/services/theme.service';
-import menuData from 'src/app/services/menu.json';
 
 @Component({
   selector: 'app-mesa',
   templateUrl: './mesa.component.html',
   styleUrls: ['./mesa.component.scss']
 })
-export class MesaComponent  {
-  menu:any = menuData;
-  tipo:string = 'principal';
-  @HostBinding('class') componentCssClass:string = 'dark-theme';
-  
 
-  btnNewOrder:string = 'NUEVO PEDIDO';
-  btnEditOrder:string = 'EDITAR PEDIDO';
+export class MesaComponent implements OnInit {
 
-  constructor(
-     private ThemeService: ThemeService,
-     private renderer:Renderer2 
-     ) { }
+  state:string = 'inicial'; // Inicial Create Edit
+  @HostBinding('class') componentCssClass:any = 'dark-theme';
+
+  constructor( 
+    private estadosMesaService:EstadosMesaService,
+    private ThemeService: ThemeService 
+    ) { }
 
   ngOnInit(): void {
-    this.ThemeService.changeClass.subscribe(componentClass => {
-      this.componentCssClass=componentClass;
+    this.estadosMesaService.changeState.subscribe( (newState) => {
+      this.state = newState;
     });
-
-    this.renderer.listen('document', 'click', ()=> {
-
+    this.ThemeService.changeClass.subscribe(componentClass => {
+      this.componentCssClass = componentClass;
     })
-      
-    }
-
-  getActivo(): any{
-    return this.menu[this.tipo]
   }
 
-  switchMenu(): void{
-    this.tipo = this.tipo === 'principal' ? this.tipo = 'desayunos' : this.tipo = 'principal';
+  setState(state:string){
+    this.state = state
   }
-
-  public onThemeChange(e:string){
-    this.componentCssClass = e;
-  } 
-
 }

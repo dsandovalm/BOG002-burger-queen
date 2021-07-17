@@ -1,0 +1,19 @@
+.container{
+    width:100vw;
+    height: 100vh;
+    position: fixed;
+    margin: 0 auto;
+    display: flex;
+    align-content: center;
+    justify-content: center;
+}
+
+form {
+    width: 80%;
+    max-width: 800px;
+    background-color: #000;
+    position: absolute;
+    margin: 0 auto;
+    align-self:center;
+    padding: 15px;
+}

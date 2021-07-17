@@ -1,4 +1,21 @@
+<<<<<<< HEAD
 @import '../../services/colores.scss';
+=======
+<<<<<<< HEAD
+$color-primary: #D03425;
+$color-secondary:#FFCB12;
+$background-color:#252836;
+$base-color:#1F1D2B;
+$text-color:#C4C4C4;
+
+.container {
+    background: $background-color;
+    height: 92vh;
+}
+=======
+@import '../../services/colores.scss';
+>>>>>>> develop
+>>>>>>> 7f4ba275063d827c375e3c45f403f04be4191b32
 
 .btns {
     display: flex;
@@ -6,7 +23,15 @@
     justify-content: space-around;
 }
 h2 {
+<<<<<<< HEAD
     color:$main-primary;
+=======
+<<<<<<< HEAD
+    color:$color-primary;
+=======
+    color:$main-primary;
+>>>>>>> develop
+>>>>>>> 7f4ba275063d827c375e3c45f403f04be4191b32
     font-weight: bolder;
     font-size: 50px;
     margin: 0;
@@ -17,6 +42,7 @@ h2 {
     align-items: center;
     height: 75vh;
 }
+<<<<<<< HEAD
 
 .menu {
     display: flex;
@@ -29,3 +55,8 @@ h2 {
     width: 50%;
     flex: 0 0  auto;
 }
+<<<<<<< HEAD
+=======
+=======
+>>>>>>> develop
+>>>>>>> 7f4ba275063d827c375e3c45f403f04be4191b32
