@@ -1,4 +1,4 @@
-import { Component, OnInit, HostBinding } from '@angular/core';
+import { Component, OnInit, HostBinding, Renderer2, ViewChild, ElementRef } from '@angular/core';
 import { ThemeService } from 'src/app/services/theme.service';
 import menuData from 'src/app/services/menu.json';
 
@@ -11,16 +11,23 @@ export class MesaComponent  {
   menu:any = menuData;
   tipo:string = 'principal';
   @HostBinding('class') componentCssClass:string = 'dark-theme';
+  
 
   btnNewOrder:string = 'NUEVO PEDIDO';
   btnEditOrder:string = 'EDITAR PEDIDO';
 
-  constructor( private ThemeService: ThemeService) 
-  {  }
+  constructor(
+     private ThemeService: ThemeService,
+     private renderer:Renderer2 
+     ) { }
 
   ngOnInit(): void {
     this.ThemeService.changeClass.subscribe(componentClass => {
       this.componentCssClass=componentClass;
+    });
+
+    this.renderer.listen('document', 'click', ()=> {
+
     })
       
     }
