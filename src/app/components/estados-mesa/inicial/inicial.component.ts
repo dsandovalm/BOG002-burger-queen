@@ -28,7 +28,6 @@ export class InicialComponent implements OnInit {
 
   setForm(form:string){
     this.popUpsService.openPopUp(form);
-    console.log( 'Enviando formulario', form )
   }
 
 }

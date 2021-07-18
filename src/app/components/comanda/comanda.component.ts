@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { EstadosMesaService } from 'src/app/services/estados-mesa.service';
 
 @Component({
   selector: 'app-comanda',
@@ -7,9 +8,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ComandaComponent implements OnInit {
 
-  constructor() { }
+  state:string = 'inicial' ;
+
+  constructor( private estadosMesaService:EstadosMesaService ) { }
 
   ngOnInit(): void {
+      this.estadosMesaService.changeState.subscribe( (newState) => {
+      this.state = newState;
+    });
   }
+
+  public setState(state:string){
+    this.estadosMesaService.setState(state)
+  }  
 
 }

@@ -1,12 +1,11 @@
 <div> 
-    <h2>Menú</h2>
-    <button (click)="switchMenu()">Cambiar menú</button>
+    <button class="btnMenu" (click)="switchMenu()"> {{textoBoton}}</button>
     <div class="menu">
         <div *ngFor="let submenu of getActivo()" class="submenu">
             <app-menu [titulo]=submenu.categoria [items]=submenu.items></app-menu>
         </div>
     </div>
     <div>
-        Comanda
+        <app-comanda></app-comanda>
     </div>
 </div>

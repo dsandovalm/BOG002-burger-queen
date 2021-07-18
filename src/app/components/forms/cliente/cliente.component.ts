@@ -9,6 +9,7 @@ import { EstadosMesaService } from 'src/app/services/estados-mesa.service';
   styleUrls: ['../form.component.scss']
 })
 export class ClienteComponent implements OnInit {
+  
   clienteForm = new FormGroup({
     nombre : new FormControl(''),
     mesa : new FormControl('')

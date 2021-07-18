@@ -1,1 +1,32 @@
-<p>comanda works!</p>
+<div class="comanda">
+    <div class="comanda-datos">
+        <p>Nombre: ___________________ Mesa: _ _</p> 
+    </div>
+    <div class="comanda-pedido">
+        <table>
+            <tr>
+                <td>Cant.</td>
+                <td>Producto</td>
+                <td>Precio</td>
+                <td>Opc.</td>
+            </tr>
+            <tr>
+                <td> 1 </td>
+                <td>Café con leche</td>
+                <td> $ 7.00</td>
+                <td> ... </td>
+            </tr>
+            <tr>
+                <td> 1 </td>
+                <td>Sandwich Jamón y queso</td>
+                <td> $ 10.00</td>
+                <td> ... </td>
+            </tr>
+        </table>
+        <p>Total: $ _ _ _ _ .00</p>
+    </div>
+    <div class="comanda-btns">
+        <button class="comanda-btn" (click)="setState('inicial')">Volver</button>
+        <button class="comanda-btn">Enviar</button>
+    </div>
+</div>

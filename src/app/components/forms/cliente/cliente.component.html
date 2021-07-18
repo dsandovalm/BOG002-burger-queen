@@ -1,6 +1,6 @@
 <div class="container">
     <form [formGroup]="clienteForm" (ngSubmit)="onSubmit()">
-        <div>
+        <div class="cliente-datos">
             <p>
                 <label for="name">Nombre del cliente</label>
                 <input id="name" type="text" formControlName="nombre">
@@ -10,9 +10,9 @@
                 <input id="mesa" type="number" formControlName="mesa">
             </p>
         </div> 
-        <div>
+        <div class="cliente-btns">
             <div class="btn" (click)="closePopUp()">Cancelar</div>
-            <button class="btn" type="submit" [disabled]="!clienteForm.valid">Submit</button>
+            <button  type="submit" [disabled]="!clienteForm.valid">Iniciar</button>
         </div>
     </form>
 </div>
