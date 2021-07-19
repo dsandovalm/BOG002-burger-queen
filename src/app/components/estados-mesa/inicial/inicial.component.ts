@@ -23,12 +23,10 @@ export class InicialComponent implements OnInit {
   this.popUpsService.contentPopUp.subscribe( (form) => {
       this.formulario = form;
     });
-  console.log('Servicios')
   }
 
   setForm(form:string){
     this.popUpsService.openPopUp(form);
-    console.log( 'Enviando formulario', form )
   }
 
 }
