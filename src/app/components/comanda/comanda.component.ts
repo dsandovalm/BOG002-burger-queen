@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { EstadosMesaService } from 'src/app/services/estados-mesa.service';
+import { ClienteService } from 'src/app/services/cliente.service';
 
 @Component({
   selector: 'app-comanda',
@@ -9,11 +10,18 @@ import { EstadosMesaService } from 'src/app/services/estados-mesa.service';
 export class ComandaComponent implements OnInit {
 
   state:string = 'inicial' ;
+  nombre: string = '';
+  mesa: number = 0;
 
-  constructor( private estadosMesaService:EstadosMesaService ) { }
+  constructor( 
+    private estadosMesaService:EstadosMesaService,
+    private clienteService:ClienteService
+     ) { }
 
   ngOnInit(): void {
-      this.estadosMesaService.changeState.subscribe( (newState) => {
+    this.nombre = this.clienteService.get().nombre;
+    this.mesa = this.clienteService.get().mesa;  
+    this.estadosMesaService.changeState.subscribe( (newState) => {
       this.state = newState;
     });
   }
