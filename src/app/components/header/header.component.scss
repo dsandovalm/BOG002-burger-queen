@@ -26,7 +26,7 @@ button {
     border: none;
     font-size: 20px;
     color:$color-purple;
-    height: 20px;
+    height: 30px;
 }
 a {
     text-decoration: none;
@@ -37,11 +37,13 @@ a {
 details {
     display: inline;
     color: black; 
-    margin: 0.5em;
+    margin-top: 10px;
+    margin-right: 10px;
    
     
     summary {
-      padding: 3px;
+      padding: 4px;
+      height: 30px;
       background-color: $color-yellow;
       outline: none;
       display: flex;

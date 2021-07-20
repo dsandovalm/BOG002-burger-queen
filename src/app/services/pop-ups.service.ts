@@ -20,7 +20,6 @@ export class PopUpsService {
     this.activo = true;
     this.getForm.next(this.formulario);
     this.getActivo.next(this.activo);
-    console.log( 'Funciona?' );
   } 
   
   closePopUp(){

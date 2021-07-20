@@ -1,5 +1,7 @@
 @import 'app/components/menu/menu.component';
 @import 'app/services/colores';
+@import 'app/components/order/order.component';
+@import 'app/components/comanda/comanda.component';
 
 *{
     box-sizing: border-box;
@@ -9,20 +11,30 @@ body {
     margin: 0;
 }
 
-.light-theme{
+.light-theme {
     background-color: $light-bg;
     color: $light-text;
-    .submenu {
+    form {
+        background-color: $light-bg;
+        color: $light-text;
+    }
+    .submenu, .container-orden, .comanda {
         background-color: $light-section;
         border: $light-section solid 1px;
+        box-shadow: 0px 8px 24px rgba(234, 124, 105, 0.4);
     }
 }
 
-.dark-theme{
+.dark-theme {
     background-color: $dark-bg;
     color: $dark-text;
-    .submenu {
+    form {
+        background-color: $dark-bg;
+        color: $dark-text;
+    }
+    .submenu, .container-orden, .comanda {
         background-color: $dark-section;
         border: $dark-section solid 1px;
+        box-shadow: 0px 8px 24px rgba(6, 17, 38, 0.4);
     }
 }

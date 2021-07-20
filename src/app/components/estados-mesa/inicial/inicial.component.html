@@ -1,9 +1,12 @@
 <div>
     <div class="btns">
-        <app-button-primary [text]= 'btnNewOrder' (click)="setForm('cliente')"></app-button-primary>
-        <app-button-primary [text]= 'btnEditOrder' ></app-button-primary>
+       <app-button-primary [text]='btnNewOrder' (click)="setForm('cliente')"></app-button-primary>
+        <app-button-primary [text]='btnEditOrder'></app-button-primary>
     </div>
     <div class="content">
         <h2>Por entregar</h2>
+        <app-order></app-order>
+        <app-order></app-order>
+        <app-order></app-order>
     </div>
 </div>

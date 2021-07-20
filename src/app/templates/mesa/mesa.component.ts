@@ -10,12 +10,15 @@ import { ThemeService } from 'src/app/services/theme.service';
 
 export class MesaComponent implements OnInit {
 
+  nombre:string = '';
+  mesa:number = 0;
+
   state:string = 'inicial'; // Inicial Create Edit
   @HostBinding('class') componentCssClass:any = 'dark-theme';
 
   constructor( 
     private estadosMesaService:EstadosMesaService,
-    private ThemeService: ThemeService 
+    private ThemeService: ThemeService
     ) { }
 
   ngOnInit(): void {
@@ -24,7 +27,7 @@ export class MesaComponent implements OnInit {
     });
     this.ThemeService.changeClass.subscribe(componentClass => {
       this.componentCssClass = componentClass;
-    })
+    });
   }
 
   setState(state:string){
