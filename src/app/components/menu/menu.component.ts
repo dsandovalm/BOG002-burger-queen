@@ -1,5 +1,7 @@
 import { Content } from '@angular/compiler/src/render3/r3_ast';
 import { Component, OnInit, Input } from '@angular/core';
+import { PedidoService } from 'src/app/services/pedido.service';
+import { itemInterface } from 'src/app/model/item.model';
 
 @Component({
   selector: 'app-menu',
@@ -12,7 +14,9 @@ export class MenuComponent implements OnInit {
   @Input() titulo:any = '';
   @Input() items:any[] = [];
 
-  constructor() { 
+  pedido:itemInterface[] = [];
+
+  constructor( private pedidoService: PedidoService) { 
 
   }
 
@@ -20,4 +24,8 @@ export class MenuComponent implements OnInit {
 
   }
 
+  addItem(item:itemInterface){
+    this.pedidoService.add(item);
+    this.pedido = this.pedidoService.get();
+  }
 }

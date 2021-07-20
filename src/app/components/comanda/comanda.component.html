@@ -10,16 +10,10 @@
                 <td>Precio</td>
                 <td>Opc.</td>
             </tr>
-            <tr>
-                <td> 1 </td>
-                <td>Café con leche</td>
-                <td> $ 7.00</td>
-                <td> ... </td>
-            </tr>
-            <tr>
-                <td> 1 </td>
-                <td>Sandwich Jamón y queso</td>
-                <td> $ 10.00</td>
+            <tr *ngFor="let item of pedido">
+                <td> {{item.cant}} </td>
+                <td>{{item.nombre}}</td>
+                <td> $ {{item.valor}}</td>
                 <td> ... </td>
             </tr>
         </table>
