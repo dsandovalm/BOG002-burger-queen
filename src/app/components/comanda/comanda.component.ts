@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { ClienteService } from 'src/app/services/cliente.service';
 
 @Component({
   selector: 'app-comanda',
@@ -7,9 +8,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ComandaComponent implements OnInit {
 
-  constructor() { }
+  nombre: string = '';
+  mesa: number = 0;
+
+  constructor( private clienteService:ClienteService ) { }
 
   ngOnInit(): void {
+    
+    this.nombre = this.clienteService.get().nombre;
+    this.mesa = this.clienteService.get().mesa;
   }
 
 }

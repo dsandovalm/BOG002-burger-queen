@@ -46,6 +46,10 @@
                 {
                     "item": "Jarra de Jugo",
                     "precio": 20
+                },
+                {
+                    "item": "Limonada natural",
+                    "precio": 7
                 }
             ]
         },
