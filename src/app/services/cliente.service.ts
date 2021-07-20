@@ -1,10 +1,13 @@
-import { Injectable } from '@angular/core';
+import { Injectable, EventEmitter, Output } from '@angular/core';
 import { Subject } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ClienteService {
+
+  @Output() definirMesa: EventEmitter<any> = new EventEmitter();
+
   nombre: string = '';
   getNombre = new Subject <string> ();
   changeNombre = this.getNombre.asObservable();

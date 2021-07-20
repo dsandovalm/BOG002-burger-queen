@@ -50,6 +50,10 @@ export class ClienteComponent implements OnInit {
     this.estadosMesaService.setState('orden');
     this.clienteService.setNombre(this.clienteForm.value.nombre);
     this.clienteService.setMesa(this.clienteForm.value.mesa);
+    this.clienteService.definirMesa.emit({
+      mesa: this.clienteForm.value.mesa,
+      nombre: this.clienteForm.value.nombre
+    })
     console.log(this.clienteForm.value.nombre,'cliente')
   }
 
