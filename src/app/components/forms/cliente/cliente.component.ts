@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, inject } from '@angular/core';
 import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
 import { PopUpsService } from 'src/app/services/pop-ups.service';
 import { EstadosMesaService } from 'src/app/services/estados-mesa.service';
