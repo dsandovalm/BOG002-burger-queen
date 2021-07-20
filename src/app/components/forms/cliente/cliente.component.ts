@@ -34,12 +34,6 @@ export class ClienteComponent implements OnInit {
     this.estadosMesaService.changeState.subscribe( (state) => {
       this.estadoMesa = state;
     });
-    this.clienteService.changeNombre.subscribe( (nombreCliente) => {
-      this.nombre = nombreCliente;
-    });
-    this.clienteService.changeMesa.subscribe( (mesaCliente) => {
-      this.mesa = mesaCliente;
-    });
   }
 
   onSubmit() {
@@ -48,13 +42,7 @@ export class ClienteComponent implements OnInit {
     // Crear nueva orden
     // Abrir el menú
     this.estadosMesaService.setState('orden');
-    this.clienteService.setNombre(this.clienteForm.value.nombre);
-    this.clienteService.setMesa(this.clienteForm.value.mesa);
-    this.clienteService.definirMesa.emit({
-      mesa: this.clienteForm.value.mesa,
-      nombre: this.clienteForm.value.nombre
-    })
-    console.log(this.clienteForm.value.nombre,'cliente')
+    this.clienteService.add(this.clienteForm.value.nombre, this.clienteForm.value.mesa );
   }
 
 

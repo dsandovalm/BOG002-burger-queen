@@ -6,28 +6,21 @@ import { Subject } from 'rxjs';
 })
 export class ClienteService {
 
-  @Output() definirMesa: EventEmitter<any> = new EventEmitter();
+  constructor () {}
 
-  nombre: string = '';
-  getNombre = new Subject <string> ();
-  changeNombre = this.getNombre.asObservable();
+  cliente: any = {
+    nombre:'',
+    mesa:0
+  };
 
-  mesa: number = 0;
-  getMesa = new Subject <number> ();
-  changeMesa = this.getMesa.asObservable();
-
-
-  constructor() { 
+  add(nombre: string, mesa:number) {
+    this.cliente = {
+      nombre: nombre,
+      mesa: mesa
+    };
   }
 
-  setNombre(newNombre:string){
-    this.nombre = newNombre;
-    this.getNombre.next(this.nombre);
-    console.log(this.nombre,'service')
-  }
-
-  setMesa(newMesa:number){
-    this.mesa = newMesa;
-    this.getMesa.next(this.mesa); 
+  get(){
+    return this.cliente
   }
 }

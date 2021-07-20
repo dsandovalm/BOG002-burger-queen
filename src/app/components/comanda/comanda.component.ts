@@ -8,36 +8,15 @@ import { ClienteService } from 'src/app/services/cliente.service';
 })
 export class ComandaComponent implements OnInit {
 
- @Input() nombre: string = '';
+  nombre: string = '';
   mesa: number = 0;
 
-  constructor( private clienteService:ClienteService ) { 
-    this.clienteService.changeNombre.subscribe( (nombreCliente) => {
-      console.log('suscrito');
-      this.nombre = nombreCliente;
-      console.log(nombreCliente, 'comanda');
-    });
-  }
+  constructor( private clienteService:ClienteService ) { }
 
   ngOnInit(): void {
     
-    this.clienteService.changeNombre.subscribe( (cliente) => {
-      console.log(cliente, 'comanda');
-    });
-   this.getMesa();
-  }
-
-  getMesa(){
-    this.clienteService.definirMesa.subscribe(data => {
-      console.log('la mesa de servicio', data)
-    })
-  }
-  setNombre(newNombre:string){
-    this.nombre = newNombre;
-  }
-
-  setMesa(newMesa:number){
-    this.mesa = newMesa;
+    this.nombre = this.clienteService.get().nombre;
+    this.mesa = this.clienteService.get().mesa;
   }
 
 }

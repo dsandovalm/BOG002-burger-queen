@@ -9,7 +9,6 @@ import menuData from 'src/app/services/menu.json';
 export class OrdenComponent implements OnInit {
   menu:any = menuData;
   tipo:string = 'principal';
-  @Input() nombre:string = ''; 
 
   constructor() { }
 
