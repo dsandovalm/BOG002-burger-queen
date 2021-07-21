@@ -33,7 +33,6 @@ export class HamburguesaComponent implements OnInit {
   }
   
   onSubmit(){
-    console.log(this.hambForm.value);
     let valorBase:number = this.tipo === 'Sencilla' ? 10 : 15;
     let adiciones:number = (this.hambForm.value.huevo ? 1 : 0) + (this.hambForm.value.queso ? 1 : 0);
     this.addItem( { 

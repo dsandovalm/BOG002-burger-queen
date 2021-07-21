@@ -27,6 +27,9 @@ export class ComandaComponent implements OnInit {
     this.estadosMesaService.changeState.subscribe( (newState) => {
       this.state = newState;
     });
+    this.nombre = this.clienteService.get().nombre;
+    this.mesa = this.clienteService.get().mesa;
+    
     this.pedidoService.addItem.subscribe((items)=>{
       this.pedido= items;
     })
