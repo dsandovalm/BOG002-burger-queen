@@ -26,7 +26,7 @@ export class InicialComponent implements OnInit {
   }
 
   setForm(form:string){
-    this.popUpsService.openPopUp(form);
+    this.popUpsService.openPopUp(form );
   }
 
 }

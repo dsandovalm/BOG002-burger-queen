@@ -5,16 +5,20 @@
     <div class="comanda-pedido">
         <table>
             <tr>
-                <td>Cant.</td>
-                <td>Producto</td>
-                <td>Precio</td>
-                <td>Opc.</td>
+                <th>Cant.</th>
+                <th>Producto</th>
+                <th>Precio</th>
+                <th>Opc.</th>
             </tr>
             <tr *ngFor="let item of pedido">
                 <td> {{item.cant}} </td>
                 <td>{{item.nombre}}</td>
                 <td> $ {{item.valor}}</td>
-                <td> ... </td>
+                <td> 
+                    <button class="delete" (click)='deleteItem(item.nombre)'>
+                        <img class="trash" src="assets/img/Trash.png">
+                    </button>  
+                </td>
             </tr>
         </table>
         <p>Total: $ _ _ _ _ .00</p>

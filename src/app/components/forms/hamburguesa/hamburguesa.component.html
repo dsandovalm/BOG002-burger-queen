@@ -1,1 +1,40 @@
-<p>hamburguesa works!</p>
+<div class="container">
+    <form [formGroup]="hambForm" (ngSubmit)="onSubmit()">
+        <div class="hamb-datos">
+            <div>
+                <p>Selecciona el tipo de hamburguesa</p>
+                <div class="container-btns">
+                    <label>
+                        <input id="tipo" type="radio" formControlName="tipo" value="pollo"> 
+                        Pollo
+                    </label>
+                    <label>
+                        <input id="tipo" type="radio" formControlName="tipo" value="carne"> 
+                        Carne
+                    </label>
+                    <label>
+                        <input id="tipo" type="radio" formControlName="tipo" value="vegetariana"> 
+                        Vegetariana
+                    </label>
+                </div>
+            </div>
+            <div>
+                <p> Alguna adición? (Tiene costo adicional) </p>
+                <div class="container-btns">
+                    <label>
+                        <input id="adiciones" type="checkbox" formControlName="huevo" value="huevo">
+                        Huevo $ 1.00
+                    </label>
+                    <label>
+                        <input id="adiciones" type="checkbox" formControlName="queso" value="queso">
+                        Queso $ 1.00
+                    </label>
+                </div>
+            </div>
+        </div> 
+        <div class="container-btns">
+            <div class="btn" (click)="closePopUp()">Cancelar</div>
+            <button  type="submit" [disabled]="!hambForm.valid">Listo</button>
+        </div>
+    </form>
+</div>

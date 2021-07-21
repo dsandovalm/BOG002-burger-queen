@@ -53,5 +53,6 @@ export class PedidoService {
     if( index != -1 ) {
       this.items.splice( index, 1 )
     }
+    this.getPedido.next(this.items)
   }
 }

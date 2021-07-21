@@ -23,8 +23,7 @@ export class ComandaComponent implements OnInit {
      ) { }
 
   ngOnInit(): void {
-    this.nombre = this.clienteService.get().nombre;
-    this.mesa = this.clienteService.get().mesa;  
+
     this.estadosMesaService.changeState.subscribe( (newState) => {
       this.state = newState;
     });
@@ -36,10 +35,8 @@ export class ComandaComponent implements OnInit {
   public setState(state:string){
     this.estadosMesaService.setState(state)
   }  
-
-  getPedido(){
-    this.pedido = this.pedidoService.get();
-    console.log(this.pedido)
-  }
   
+  public deleteItem(item:string){
+    this.pedidoService.delete(item)
+  }
 }
