@@ -8,4 +8,10 @@
     <div *ngIf="formulario == 'hamburguesa'">
         <app-hamburguesa [tipo]= 'tipo'></app-hamburguesa>
     </div>
+    <div *ngIf="formulario == 'cancelar'">
+        <app-cancelar></app-cancelar>
+    </div>
+    <div class="container" *ngIf="formulario == 'enviar'">
+        <app-enviar></app-enviar>
+    </div>
 </div>

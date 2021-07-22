@@ -27,7 +27,7 @@
         <p class="total">Total: $ {{precioTotal()}}.00</p>
     </div>
     <div class="comanda-btns">
-        <button class="comanda-btn" (click)="confirmation('Desea elimar el pedido')">Volver</button>
-        <button class="comanda-btn" (click)="setPedido()">Enviar</button>
+        <button class="comanda-btn" (click)="openPopUp('cancelar')">Volver</button>
+        <button class="comanda-btn" (click)="openPopUp('enviar')">Enviar</button>
     </div>
 </div>

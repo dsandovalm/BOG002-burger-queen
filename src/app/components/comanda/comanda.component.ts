@@ -2,7 +2,7 @@ import { Component, OnInit, OnChanges, SimpleChange } from '@angular/core';
 import { EstadosMesaService } from 'src/app/services/estados-mesa.service';
 import { ClienteService } from 'src/app/services/cliente.service';
 import { PedidoService } from 'src/app/services/pedido.service';
-import { FirestoreService } from 'src/app/services/firestore.service';
+import { PopUpsService } from 'src/app/services/pop-ups.service';
 import { itemInterface } from 'src/app/model/item.model';
 
 @Component({
@@ -21,11 +21,10 @@ export class ComandaComponent implements OnInit {
     private estadosMesaService:EstadosMesaService,
     private clienteService:ClienteService,
     private pedidoService: PedidoService,
-    private firestoreService: FirestoreService
+    private popUpsService:PopUpsService
      ) { }
 
   ngOnInit(): void {
-
     this.estadosMesaService.changeState.subscribe( (newState) => {
       this.state = newState;
     });
@@ -44,25 +43,10 @@ export class ComandaComponent implements OnInit {
     })
     return total
   }
-  confirmation(message:string){
-    if (window.confirm(message)){
-      this.pedidoService.clean();
-      this.estadosMesaService.setState('inicial')
-    }      
+  openPopUp(info:string){
+    this.popUpsService.openPopUp(info);
   }
-
-  setPedido(){
-    if(window.confirm('Enviar pedido')){
-      this.firestoreService.setOrder('nuevo pedido');
-      this.estadosMesaService.setState('inicial')
-    }
-  }
-
-  // goBack(){
-  //   this.pedidoService.clean();
-  //   this.estadosMesaService.setState('inicial');
-  // }
-
+ 
   public setState(state:string){
     this.estadosMesaService.setState(state)
   }  

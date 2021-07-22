@@ -20,6 +20,8 @@ import { InicialComponent } from './components/estados-mesa/inicial/inicial.comp
 import { OrdenComponent } from './components/estados-mesa/orden/orden.component';
 import { ComandaComponent } from './components/comanda/comanda.component';
 import { environment } from 'src/environments/environment';
+import { CancelarComponent } from './components/forms/cancelar/cancelar.component';
+import { EnviarComponent } from './components/forms/enviar/enviar.component';
 
 @NgModule({
   declarations: [
@@ -36,7 +38,9 @@ import { environment } from 'src/environments/environment';
     PopUpComponent,
     InicialComponent,
     OrdenComponent,
-    ComandaComponent
+    ComandaComponent,
+    CancelarComponent,
+    EnviarComponent
   ],
   imports: [
     BrowserModule,
