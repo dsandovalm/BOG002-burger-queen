@@ -39,9 +39,14 @@ export class PedidoService {
     })
     let index:number = nombres.indexOf(item.nombre);
     if( index != -1 ) {
-      this.items[index].cant--;
+      if( this.items[index].cant > 1 ){
+        this.items[index].cant--;
       this.items[index].valor = this.items[index].valor - item.valor;
+      } else {
+        this.items.splice( index, 1 )
+      }
     }
+    this.getPedido.next(this.items)
   }
 
   delete(nombreItem:string){
@@ -53,6 +58,12 @@ export class PedidoService {
     if( index != -1 ) {
       this.items.splice( index, 1 )
     }
+    this.getPedido.next(this.items)
+  }
+
+  clean(){
+    // Limpia todo el pedido
+    this.items = [];
     this.getPedido.next(this.items)
   }
 }

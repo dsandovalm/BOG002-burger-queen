@@ -40,7 +40,6 @@ export class HamburguesaComponent implements OnInit {
       valor: valorBase + adiciones, 
       cant:1 } );
     this.closePopUp();  
-    
   }
 
   closePopUp(){

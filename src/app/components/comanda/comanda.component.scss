@@ -4,6 +4,11 @@
     margin: 2vh 10px 3vh 0;
     border-radius: 20px;
     padding: 30px;
+
+    .comanda-datos{
+        font-size: 24px;
+        font-weight: bolder;
+    }
     
     .comanda-pedido{
         display:flex;
@@ -18,6 +23,11 @@ table {
     width: 100%;
     th{
         color: $main-button;
+        padding: 10px;
+        font-size: 26px;
+    }
+    td {
+        text-align: center;
     }
 }
 
@@ -41,14 +51,44 @@ table {
     display: flex;
     justify-content: flex-end;
 }
+.btns-item {
+    display: flex;
+    justify-content: space-evenly;
+
+}
+.add, .reduce {
+    border: none;
+    border-radius: 10px;
+    width: 30px;
+    height: 30px;
+    font-size: 20px; 
+    color: gainsboro;
+    font-weight: bolder;
+}
+.add {
+    background-color: #6B9B36;
+    & :hover {
+        box-shadow: 0px 5px 5px rgba(234, 124, 105, 0.4);
+        color: yellowgreen;
+    }
+}
+.reduce {
+    background-color: $main-primary;
+
+}
+
 .trash {
     border-radius: 10px;
     width: 30px;
+    height: 30px;
 }
 .delete {
     background-color: transparent;
     border: none;
-    & :hover {
-        box-shadow: 0px 5px 5px rgba(234, 124, 105, 0.4);
-    }
+}
+.total{
+    font-size: 30px;
+    padding: 0 20px;
+    text-align: right;
+    font-weight: bolder;
 }

@@ -1,6 +1,7 @@
 <div class="comanda">
     <div class="comanda-datos">
-        <p>Nombre: {{nombre}} Mesa:  {{mesa}} </p> 
+        <p>Nombre: {{nombre}}</p>
+        <p> Mesa:  {{mesa}} </p> 
     </div>
     <div class="comanda-pedido">
         <table>
@@ -14,17 +15,19 @@
                 <td> {{item.cant}} </td>
                 <td>{{item.nombre}}</td>
                 <td> $ {{item.valor}}</td>
-                <td> 
+                <td class="btns-item"> 
+                    <button class="add" (click)='addItem(item)'> + </button>
+                    <button class="reduce" (click)='reduceItem(item)'> - </button>
                     <button class="delete" (click)='deleteItem(item.nombre)'>
                         <img class="trash" src="assets/img/Trash.png">
                     </button>  
                 </td>
             </tr>
         </table>
-        <p>Total: $ _ _ _ _ .00</p>
+        <p class="total">Total: $ {{precioTotal()}}.00</p>
     </div>
     <div class="comanda-btns">
-        <button class="comanda-btn" (click)="setState('inicial')">Volver</button>
-        <button class="comanda-btn">Enviar</button>
+        <button class="comanda-btn" (click)="confirmation('Desea elimar el pedido')">Volver</button>
+        <button class="comanda-btn" (click)="setPedido()">Enviar</button>
     </div>
 </div>
