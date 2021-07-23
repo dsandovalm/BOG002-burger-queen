@@ -4,34 +4,28 @@
             <div>
                 <p>Selecciona el tipo de hamburguesa</p>
                 <div class="container-btns">
-                    <label>
-                        <input id="tipo" type="radio" formControlName="tipo" value="pollo"> 
-                        Pollo
-                    </label>
-                    <label>
-                        <input id="tipo" type="radio" formControlName="tipo" value="carne"> 
-                        Carne
-                    </label>
-                    <label>
-                        <input id="tipo" type="radio" formControlName="tipo" value="vegetariana"> 
-                        Vegetariana
-                    </label>
+                    
+                    <input id="pollo" type="radio" formControlName="tipo" value="pollo"> 
+                    <label for="pollo">Pollo</label>
+
+                    <input id="carne" type="radio" formControlName="tipo" value="carne"> 
+                    <label for="carne">Carne</label>
+
+                    <input id="veg" type="radio" formControlName="tipo" value="vegetariana"> 
+                    <label for="veg">Vegetariana</label>
                 </div>
             </div>
             <div>
                 <p> Alguna adición? (Tiene costo adicional) </p>
                 <div class="container-btns">
-                    <label>
-                        <input id="adiciones" type="checkbox" formControlName="huevo" value="huevo">
-                        Huevo $ 1.00
-                    </label>
-                    <label>
-                        <input id="adiciones" type="checkbox" formControlName="queso" value="queso">
-                        Queso $ 1.00
-                    </label>
+                    <input id="huevo" type="checkbox" formControlName="huevo" value="huevo">
+                    <label for="huevo" >Huevo $ 1.00</label>
+                    <input id="queso" type="checkbox" formControlName="queso" value="queso">
+                    <label for="queso" >Queso $ 1.00</label>
                 </div>
             </div>
         </div> 
+        <hr>
         <div class="container-btns">
             <div class="btn" (click)="closePopUp()">Cancelar</div>
             <button  type="submit" [disabled]="!hambForm.valid">Listo</button>

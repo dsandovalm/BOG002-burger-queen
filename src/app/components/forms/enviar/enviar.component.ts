@@ -26,7 +26,7 @@ export class EnviarComponent implements OnInit {
   }
 
   setPedido(){
-    this.firestoreService.setOrder('nuevo pedido desde pop up');
+    this.firestoreService.setOrder();
     this.pedidoService.clean();
     this.popUpsService.closePopUp();
     this.estadosMesaService.setState('inicial')      

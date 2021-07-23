@@ -36,14 +36,38 @@ input {
 .container-btns{
 display: flex;
 justify-content: space-evenly;
-    label {
-        width:30%;
-            i {
-                display:none;
-            }
+    label{
+        max-width:30%;
+        width: 180px ;
+        height: 60px ;
+        border-radius: 8px;
+        border: $color-primary solid 2px;
+        color: $color-primary;
+        font-size: 28px;
+        
+        margin-bottom: 10px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
 
+    input {
+        display:none;
+        &:checked{
+            & + label {
+                background: $color-primary;
+                color: #ffff;
+                box-shadow: 0px 8px 24px rgba(234, 124, 105, 0.4);
+            }
+        }
     }
 }
+hr{
+    border: 4px dashed $color-primary;
+    border-style: none none dashed;
+    padding:10px
+}
+
 
 button, .btn {
     width: 180px ;
