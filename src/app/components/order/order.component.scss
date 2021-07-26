@@ -1,3 +1,5 @@
+$color-primary: #D03425;
+
 .container-orden {
     display: flex;
     width: 95vw;
@@ -10,4 +12,18 @@
 ul {
     list-style: none;
     padding: 15px;
+}
+.btn-cocina {
+    width: 180px ;
+    height: 60px ;
+    border-radius: 8px;
+    border: $color-primary solid 2px;
+    color: $color-primary;
+    font-size: 28px;
+    background: transparent;
+  &:hover {
+      background: $color-primary;
+      color: #ffff;
+      box-shadow: 0px 8px 24px rgba(234, 124, 105, 0.4);
+  }
 }

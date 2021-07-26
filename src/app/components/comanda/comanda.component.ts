@@ -4,6 +4,7 @@ import { ClienteService } from 'src/app/services/cliente.service';
 import { PedidoService } from 'src/app/services/pedido.service';
 import { PopUpsService } from 'src/app/services/pop-ups.service';
 import { itemInterface } from 'src/app/model/item.model';
+import { FirestoreService } from 'src/app/services/firestore.service';
 
 @Component({
   selector: 'app-comanda',
@@ -16,12 +17,14 @@ export class ComandaComponent implements OnInit {
   nombre: string = '';
   mesa: number = 0;
   pedido:itemInterface[] = [];
+  edicion:boolean = false;
 
   constructor( 
     private estadosMesaService:EstadosMesaService,
     private clienteService:ClienteService,
     private pedidoService: PedidoService,
-    private popUpsService:PopUpsService
+    private popUpsService:PopUpsService,
+    private firestorService:FirestoreService
      ) { }
 
   ngOnInit(): void {
@@ -34,6 +37,8 @@ export class ComandaComponent implements OnInit {
     this.pedidoService.addItem.subscribe((items)=>{
       this.pedido= items;
     })
+
+    this.edicion = this.pedidoService.getEdit();
   }
 
   precioTotal():number{
@@ -69,5 +74,12 @@ export class ComandaComponent implements OnInit {
   
   public deleteItem(item:string){
     this.pedidoService.delete(item)
+  }
+
+  public editOrder() {
+    this.firestorService.setOrderEdit();
+    this.estadosMesaService.setState('inicial');
+    this.pedidoService.changeEdit(false);
+
   }
 }

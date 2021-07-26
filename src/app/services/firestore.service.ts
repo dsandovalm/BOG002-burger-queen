@@ -16,11 +16,12 @@ export class FirestoreService {
       mesa: this.clienteService.get().mesa
     },
     items:this.pedidoService.get(),
-    estado: 'prueba',
-    registrado: new Date,
+    estado: 'registrado',
+    registrado: Date.now(),
     entregado: null 
 
   }
+  ordenId:string = '';
 
   constructor(
     private firestore: AngularFirestore,
@@ -40,4 +41,23 @@ export class FirestoreService {
     return this.firestore.collection('pedidos').add(this.pedido);
   }
 
+  /* Traer data, estado : Registrado */
+  public getOrdersRegister() {
+      return this.firestore.collection('pedidos').snapshotChanges();
+
+  }
+
+  /* Cambiar estado de una orden */
+
+
+  /* Edita pedido */
+  public setOrdenId(id:string){
+    this.ordenId = id;
+  }
+
+  public setOrderEdit(){
+    this.pedido.cliente.nombre = this.clienteService.get().nombre;
+    this.pedido.cliente.mesa = this.clienteService.get().mesa;
+    return this.firestore.collection('pedidos').doc(this.ordenId).set(this.pedido);
+  }
 }

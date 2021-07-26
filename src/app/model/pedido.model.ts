@@ -7,8 +7,9 @@ export interface pedidoInterface {
     },
     items:itemInterface[],
     estado:string,
-    registrado: Date,
-    entregado: Date | null
+    registrado: number,
+    entregado: Date | null,
+    id?:string,
 }
 
 /* como Clase

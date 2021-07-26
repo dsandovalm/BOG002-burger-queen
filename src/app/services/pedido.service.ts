@@ -9,6 +9,7 @@ import { itemInterface } from 'src/app/model/item.model'
 export class PedidoService {
 
   items : itemInterface[] = [];
+  edit: boolean = false;
 
   getPedido = new BehaviorSubject(this.items);
   addItem = this.getPedido.asObservable();
@@ -16,6 +17,14 @@ export class PedidoService {
 
   get(){
     return this.items
+  }
+
+  getEdit(){
+    return this.edit;
+  }
+
+  changeEdit( state:boolean ) {
+    this.edit = state;
   }
 
   add (nuevoItem:itemInterface) {

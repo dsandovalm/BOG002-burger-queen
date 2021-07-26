@@ -22,7 +22,8 @@ export class CancelarComponent implements OnInit {
   back(){
     this.pedidoService.clean();
     this.popUpsService.closePopUp();
-    this.estadosMesaService.setState('inicial')      
+    this.estadosMesaService.setState('inicial');
+    this.pedidoService.changeEdit(false);      
   }
   keep(){
     this.popUpsService.closePopUp();

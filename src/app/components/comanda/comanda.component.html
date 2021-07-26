@@ -28,6 +28,7 @@
     </div>
     <div class="comanda-btns">
         <button class="comanda-btn" (click)="openPopUp('cancelar')">Volver</button>
-        <button class="comanda-btn" (click)="openPopUp('enviar')">Enviar</button>
+        <button *ngIf="edicion == true" class="comanda-btn" (click)="editOrder()">Editar</button>
+        <button *ngIf="edicion == false" class="comanda-btn" (click)="openPopUp('enviar')">Enviar</button>
     </div>
 </div>
