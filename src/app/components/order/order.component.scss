@@ -2,16 +2,36 @@ $color-primary: #D03425;
 
 .container-orden {
     display: flex;
+    flex-direction: column;
     width: 95vw;
     border-radius: 20px;
     font-size: 20px;
-    justify-content: space-around;
+    align-content: center;
     margin-top: 30px;
     margin-right: 0;
 }
-ul {
+.content {
+    display: flex;
+    flex-direction: row;
+    justify-content: start;
+    div:first-child {
+        width: 40vw;
+        margin-left: 20px;
+
+    }
+}
+.items-order {
     list-style: none;
-    padding: 15px;
+    font-size: 28px;
+    li{
+        align-content: space-between;
+        
+    }
+    span {
+        padding: 10px;
+        margin-bottom: 10px;
+    
+    }
 }
 .btn-cocina {
     width: 180px ;
@@ -21,9 +41,14 @@ ul {
     color: $color-primary;
     font-size: 28px;
     background: transparent;
+    align-self: center;
+    margin-bottom: 20px;
   &:hover {
       background: $color-primary;
       color: #ffff;
       box-shadow: 0px 8px 24px rgba(234, 124, 105, 0.4);
   }
+}
+.clock {
+    margin-bottom: 20px;
 }

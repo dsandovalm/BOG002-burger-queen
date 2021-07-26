@@ -23,6 +23,7 @@ import { environment } from 'src/environments/environment';
 import { CancelarComponent } from './components/forms/cancelar/cancelar.component';
 import { EnviarComponent } from './components/forms/enviar/enviar.component';
 import { PedidoEditableComponent } from './components/estados-mesa/pedido-editable/pedido-editable.component';
+import { EntregarComponent } from './components/forms/entregar/entregar.component';
 
 @NgModule({
   declarations: [
@@ -42,7 +43,8 @@ import { PedidoEditableComponent } from './components/estados-mesa/pedido-editab
     ComandaComponent,
     CancelarComponent,
     EnviarComponent,
-    PedidoEditableComponent
+    PedidoEditableComponent,
+    EntregarComponent
   ],
   imports: [
     BrowserModule,
