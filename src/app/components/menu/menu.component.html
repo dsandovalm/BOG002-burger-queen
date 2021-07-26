@@ -3,7 +3,8 @@
     <ul>
         <li *ngFor="let producto of items">
             <span class="prod-item">{{producto.item}}</span>
-            <button class="btn-additem">+</button>
+            <button *ngIf="producto.item === 'Sencilla' || producto.item === 'Doble'" class="btn-additem" (click)="setForm('hamburguesa', producto.item)">+</button>
+            <button *ngIf="producto.item != 'Sencilla' &&  producto.item != 'Doble'" class="btn-additem" (click)="addItem( { nombre: producto.item, valor: producto.precio, cant:1 } )">+</button>
             <span class="prod-precio">{{producto.precio | currency}}</span>
         </li>
     </ul>

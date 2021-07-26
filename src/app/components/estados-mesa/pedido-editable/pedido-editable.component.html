@@ -1,0 +1,16 @@
+<div class="container-edit">
+    <h2>Pedidos en cocina</h2>
+    <div>
+        <p>Selecciona el pedido que desees editar, recuerda que solo pueden ser editados los pedidos que no han iniciado a prepararse en cocina </p>
+        <app-order *ngFor= 'let pedido of ordenes' 
+            [mesa]='pedido.data.cliente.mesa' 
+            [cliente]='pedido.data.cliente.nombre' 
+            [tiempo]='pedido.data.registrado'
+            [orden]='pedido.data.items'
+            (click)='click(pedido)'>
+        </app-order>
+    </div>
+    <div class="btns">
+        <app-button-primary [text]='"VOLVER"' (click)="goBack()"></app-button-primary>
+    </div>
+</div>

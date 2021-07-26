@@ -1,0 +1,14 @@
+{
+  "projects": {
+    "burguerQueen": "burguerqueen-d6fe0"
+  },
+  "targets": {
+    "burguerqueen-d6fe0": {
+      "hosting": {
+        "Burger-Queen": [
+          "burguerqueen-d6fe0"
+        ]
+      }
+    }
+  }
+}

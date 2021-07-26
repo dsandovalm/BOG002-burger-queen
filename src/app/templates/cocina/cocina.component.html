@@ -3,10 +3,13 @@
     <div class="container">
         <h2>Pedidos</h2>
         <div>
-            <app-order></app-order>
-            <app-order></app-order>
-            <app-order></app-order>
-
+            <app-order *ngFor= 'let pedido of ordenes' 
+                [mesa]='pedido.cliente.mesa' 
+                [cliente]='pedido.cliente.nombre' 
+                [tiempo]='pedido.registrado'
+                [orden]='pedido.items'
+                [state]='state'  >
+            </app-order>
         </div>
     </div>
 

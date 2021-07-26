@@ -1,32 +1,34 @@
 <div class="comanda">
     <div class="comanda-datos">
-        <p>Nombre: {{nombre}} Mesa:  {{mesa}} </p> 
+        <p>Nombre: {{nombre}}</p>
+        <p> Mesa:  {{mesa}} </p> 
     </div>
     <div class="comanda-pedido">
         <table>
             <tr>
-                <td>Cant.</td>
-                <td>Producto</td>
-                <td>Precio</td>
-                <td>Opc.</td>
+                <th>Cant.</th>
+                <th>Producto</th>
+                <th>Precio</th>
+                <th>Opc.</th>
             </tr>
-            <tr>
-                <td> 1 </td>
-                <td>Café con leche</td>
-                <td> $ 7.00</td>
-                <td> ... </td>
-            </tr>
-            <tr>
-                <td> 1 </td>
-                <td>Sandwich Jamón y queso</td>
-                <td> $ 10.00</td>
-                <td> ... </td>
+            <tr *ngFor="let item of pedido">
+                <td> {{item.cant}} </td>
+                <td>{{item.nombre}}</td>
+                <td> $ {{item.valor}}</td>
+                <td class="btns-item"> 
+                    <button class="add" (click)='addItem(item)'> + </button>
+                    <button class="reduce" (click)='reduceItem(item)'> - </button>
+                    <button class="delete" (click)='deleteItem(item.nombre)'>
+                        <img class="trash" src="assets/img/Trash.png">
+                    </button>  
+                </td>
             </tr>
         </table>
-        <p>Total: $ _ _ _ _ .00</p>
+        <p class="total">Total: $ {{precioTotal()}}.00</p>
     </div>
     <div class="comanda-btns">
-        <button class="comanda-btn" (click)="setState('inicial')">Volver</button>
-        <button class="comanda-btn">Enviar</button>
+        <button class="comanda-btn" (click)="openPopUp('cancelar')">Volver</button>
+        <button *ngIf="edicion == true" class="comanda-btn" (click)="editOrder()">Editar</button>
+        <button *ngIf="edicion == false" class="comanda-btn" (click)="openPopUp('enviar')">Enviar</button>
     </div>
 </div>
