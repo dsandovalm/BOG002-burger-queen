@@ -1,4 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { itemInterface } from 'src/app/model/item.model';
+import { FirestoreService } from 'src/app/services/firestore.service';
+import { pedidoInterface } from 'src/app/model/pedido.model';
 
 @Component({
   selector: 'app-order',
@@ -7,9 +10,23 @@ import { Component, OnInit } from '@angular/core';
 })
 export class OrderComponent implements OnInit {
 
-  constructor() { }
+  @Input() id:string = '';
+  @Input() mesa:number = 0;
+  @Input() cliente:string = '';
+  @Input() tiempo:number = 0;
+  @Input() orden:itemInterface[] = [];
+  @Input() state:string = '';
+
+  constructor( private firestoreService:FirestoreService ) { }
 
   ngOnInit(): void {
+    
+  }
+
+  preparar(){
+    let doc = this.firestoreService.setState('cocinando',this.id);
+    this.state = 'cocinando';
+    //Cambiar el estado de la orden a 'Cocinando
   }
 
 }

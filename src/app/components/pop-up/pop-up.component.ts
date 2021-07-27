@@ -11,6 +11,7 @@ export class PopUpComponent implements OnInit {
 
   activo:boolean = false;
   formulario:string = 'cliente';
+  tipo:string = '';
 
   constructor( private popUpsService:PopUpsService ) { }
 
@@ -21,6 +22,9 @@ export class PopUpComponent implements OnInit {
   this.popUpsService.contentPopUp.subscribe( (form) => {
       this.formulario = form;
     });
+    this.popUpsService.itemTipo.subscribe( (item) => {
+      this.tipo = item;
+    })
   }
 
   getClass(){

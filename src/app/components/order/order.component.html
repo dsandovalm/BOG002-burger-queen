@@ -1,15 +1,21 @@
 <div class="container-orden">
-    <div >
-        <h3>Mesa : _ _</h3>
-        <h2>Nombre del cliente</h2>
-        <div class="clock"> Time: 00: 00: 00</div>
-    </div>
-    <div>
-        <ul>
-            <li>1 Burger Pollo</li>
-            <li>1 Super Burger Res</li>
-            <li>2 Gaseosas 500ml</li>
-            <li>1 Aros de Cebolla</li>
+   <div class="content">
+     <div >
+        <h2>Mesa : {{mesa}}</h2>
+        <h2>Cliente : {{cliente}}</h2>
+        <div class="clock"> {{tiempo | date:'short'}}</div>
+     </div>
+     <div>
+        <ul class="items-order">
+            <li *ngFor = 'let item of orden'>
+                <span>{{item.cant}}</span> 
+                <span>{{item.nombre}}</span>
+            </li>
+            
         </ul>
+     </div>
     </div>
+     <button *ngIf="state == 'registrado'" class="btn-cocina" (click)='preparar()'>Iniciar</button>
+     <button *ngIf="state == 'cocinando'" class="btn-cocina">Entregar</button>
+   
 </div>

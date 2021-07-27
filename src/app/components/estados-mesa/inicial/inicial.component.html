@@ -1,12 +1,16 @@
-<div>
+<div class="inicial-mesa">
     <div class="btns">
        <app-button-primary [text]='btnNewOrder' (click)="setForm('cliente')"></app-button-primary>
-        <app-button-primary [text]='btnEditOrder'></app-button-primary>
+        <app-button-primary [text]='btnEditOrder' (click)="changeState('editar-pedido')"></app-button-primary>
     </div>
-    <div class="content">
+    <div class="content-inicial">
         <h2>Por entregar</h2>
-        <app-order></app-order>
-        <app-order></app-order>
-        <app-order></app-order>
+        <app-order *ngFor= 'let pedido of ordenes'
+        [mesa]='pedido.cliente.mesa' 
+        [cliente]='pedido.cliente.nombre' 
+        [tiempo]='pedido.registrado'
+        [orden]='pedido.items'
+        (click)="setForm('entregar')">
+        </app-order>
     </div>
 </div>

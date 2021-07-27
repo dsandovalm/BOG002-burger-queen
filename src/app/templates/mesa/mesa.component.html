@@ -18,6 +18,8 @@
         <div *ngIf="state == 'orden'">
             <app-orden></app-orden>
         </div>
-        
+        <div *ngIf="state == 'editar-pedido'">
+            <app-pedido-editable></app-pedido-editable>
+        </div>
     </div>
 </section>

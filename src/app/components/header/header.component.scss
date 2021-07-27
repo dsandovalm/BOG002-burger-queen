@@ -24,9 +24,9 @@ button {
     margin-right: 10px;
     background-color: $color-yellow;
     border: none;
-    font-size: 20px;
+    font-size: 30px;
     color:$color-purple;
-    height: 30px;
+    height: 40px;
 }
 a {
     text-decoration: none;
@@ -39,11 +39,11 @@ details {
     color: black; 
     margin-top: 10px;
     margin-right: 10px;
-   
+    font-size: 30px;
     
     summary {
       padding: 4px;
-      height: 30px;
+      height: 40px;
       background-color: $color-yellow;
       outline: none;
       display: flex;
@@ -51,7 +51,7 @@ details {
     }
     
     &[open] {
-     width: 60px;
+     width: 90px;
       color: black;
     }
   }
