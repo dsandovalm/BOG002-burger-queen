@@ -16,13 +16,12 @@ export class EntregarComponent implements OnInit {
 
   ngOnInit(): void {
   }
+  
   goBack(){
     this.popupService.closePopUp()
   }
 
   handOver(){
     this.popupService.closePopUp();
-    
   }
-
 }

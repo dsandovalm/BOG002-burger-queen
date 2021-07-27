@@ -24,9 +24,16 @@ export class OrderComponent implements OnInit {
   }
 
   preparar(){
-    let doc = this.firestoreService.setState('cocinando',this.id);
     this.state = 'cocinando';
-    //Cambiar el estado de la orden a 'Cocinando
+    let doc = this.firestoreService.setState(this.state,this.id);
+  }
+  terminar(){
+    this.state = 'terminado';
+    let doc = this.firestoreService.setState(this.state,this.id);
+  }
+  entregar(){
+    this.state = 'entregado';
+    let doc = this.firestoreService.setState(this.state,this.id);
   }
 
 }

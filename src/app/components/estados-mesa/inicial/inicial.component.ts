@@ -35,7 +35,7 @@ export class InicialComponent implements OnInit {
   }
 
   setForm(form:string){
-    this.popUpsService.openPopUp(form );
+    this.popUpsService.openPopUp(form);
   }
 
   changeState(state:string){
@@ -46,7 +46,7 @@ export class InicialComponent implements OnInit {
   getOrders() {
     this.firestoreService.getOrdersRegister().subscribe( orderSnapshot => {
       orderSnapshot.forEach((data: any) => {
-        if (data.payload.doc.data().estado === 'listo') {
+        if (data.payload.doc.data().estado === 'terminado') {
           this.ordenes.push(data.payload.doc.data())
         }
       })

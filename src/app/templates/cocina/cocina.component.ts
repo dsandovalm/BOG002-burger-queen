@@ -13,6 +13,7 @@ export class CocinaComponent implements OnInit {
   @HostBinding('class') componentCssClass: string = 'dark-theme';
 
   ordenes:pedidoInterface[] = [];
+  cocinando:pedidoInterface[] = [];
   state: string = 'cocina';
   
   constructor(
@@ -28,7 +29,7 @@ export class CocinaComponent implements OnInit {
 
   }
 
-  getOrders() {
+  getOrders(){
     this.firestoreService.getOrdersRegister().subscribe( orderSnapshot => {
       orderSnapshot.forEach((data: any) => {
         if (data.payload.doc.data().estado == 'registrado'){
@@ -36,6 +37,10 @@ export class CocinaComponent implements OnInit {
           let last = this.ordenes.length - 1;
           this.ordenes[last].id =  data.payload.doc.id;
           console.log(this.ordenes[last]);
+        } else if (data.payload.doc.data().estado == 'cocinando'){
+          this.cocinando.push(data.payload.doc.data());
+          let last = this.cocinando.length - 1;
+          this.cocinando[last].id =  data.payload.doc.id;
         }
       })
     });

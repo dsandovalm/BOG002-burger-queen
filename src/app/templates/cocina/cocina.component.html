@@ -1,6 +1,17 @@
 <section style= "background: inherit">
     <header></header>
     <div class="container">
+        <h2>Cocinando</h2>
+        <div>
+            <app-order *ngFor= 'let pedido of cocinando' 
+                [mesa]='pedido.cliente.mesa' 
+                [cliente]='pedido.cliente.nombre' 
+                [tiempo]='pedido.registrado'
+                [orden]='pedido.items'
+                [state]='pedido.estado'
+                [id]='pedido.id ? pedido.id : ""'>
+            </app-order>
+        </div>
         <h2>Pedidos</h2>
         <div>
             <app-order *ngFor= 'let pedido of ordenes' 
