@@ -20,10 +20,12 @@ export class OrderComponent implements OnInit {
   constructor( private firestoreService:FirestoreService ) { }
 
   ngOnInit(): void {
+    
   }
 
   preparar(){
-    let doc = this.firestoreService.setState('cocinando',this.id)
+    let doc = this.firestoreService.setState('cocinando',this.id);
+    this.state = 'cocinando';
     //Cambiar el estado de la orden a 'Cocinando
   }
 
