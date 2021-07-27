@@ -1,5 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { itemInterface } from 'src/app/model/item.model';
+import { FirestoreService } from 'src/app/services/firestore.service';
+import { pedidoInterface } from 'src/app/model/pedido.model';
 
 @Component({
   selector: 'app-order',
@@ -13,15 +15,17 @@ export class OrderComponent implements OnInit {
   @Input() cliente:string = '';
   @Input() tiempo:number = 0;
   @Input() orden:itemInterface[] = [];
-  @Input() state:string = ''
+  @Input() state:string = '';
 
-  constructor() { }
+  constructor( private firestoreService:FirestoreService ) { }
 
   ngOnInit(): void {
+    
   }
 
   preparar(){
-      this.state = 'preparando';
+    let doc = this.firestoreService.setState('cocinando',this.id);
+    this.state = 'cocinando';
     //Cambiar el estado de la orden a 'Cocinando
   }
 
