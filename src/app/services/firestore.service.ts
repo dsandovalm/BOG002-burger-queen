@@ -1,3 +1,4 @@
+import { identifierModuleUrl } from '@angular/compiler';
 import { Injectable } from '@angular/core';
 import { AngularFirestore } from '@angular/fire/firestore';
 import { itemInterface } from '../model/item.model';
@@ -48,7 +49,12 @@ export class FirestoreService {
   }
 
   /* Cambiar estado de una orden */
-
+  public setState(state:string,id:string){
+    this.firestore.collection('pedidos').doc(id).update({estado:state}).then(()=>{
+      //Volver a cargar cocina
+    });
+    
+  }
 
   /* Edita pedido */
   public setOrdenId(id:string){

@@ -8,7 +8,8 @@
                 [cliente]='pedido.cliente.nombre' 
                 [tiempo]='pedido.registrado'
                 [orden]='pedido.items'
-                [state]='state'  >
+                [state]='pedido.estado'
+                [id]='pedido.id ? pedido.id : ""'>
             </app-order>
         </div>
     </div>
