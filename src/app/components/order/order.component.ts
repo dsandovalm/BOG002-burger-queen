@@ -2,6 +2,7 @@ import { Component, Input, OnInit } from '@angular/core';
 import { itemInterface } from 'src/app/model/item.model';
 import { FirestoreService } from 'src/app/services/firestore.service';
 import { pedidoInterface } from 'src/app/model/pedido.model';
+import { PopUpsService } from 'src/app/services/pop-ups.service';
 
 @Component({
   selector: 'app-order',
@@ -17,7 +18,10 @@ export class OrderComponent implements OnInit {
   @Input() orden:itemInterface[] = [];
   @Input() state:string = '';
 
-  constructor( private firestoreService:FirestoreService ) { }
+  constructor( 
+    private firestoreService:FirestoreService,
+    private popUpService: PopUpsService
+  ) { }
 
   ngOnInit(): void {
     
@@ -32,8 +36,8 @@ export class OrderComponent implements OnInit {
     let doc = this.firestoreService.setState(this.state,this.id);
   }
   entregar(){
-    this.state = 'entregado';
-    let doc = this.firestoreService.setState(this.state,this.id);
+    let doc = this.firestoreService.setId(this.id);
+    this.popUpService.openPopUp('entregar'); 
   }
 
 }

@@ -6,12 +6,12 @@
     <div class="content-inicial">
         <h2>Por entregar</h2>
         <app-order *ngFor= 'let pedido of ordenes'
-        [mesa]='pedido.cliente.mesa' 
-        [cliente]='pedido.cliente.nombre' 
-        [tiempo]='pedido.registrado'
-        [orden]='pedido.items'
-        [state]='pedido.estado'
-        (click)="setForm('entregar')">
+        [mesa]='pedido[0].cliente.mesa' 
+        [cliente]='pedido[0].cliente.nombre' 
+        [tiempo]='pedido[0].registrado'
+        [orden]='pedido[0].items'
+        [state]='pedido[0].estado'
+        [id]='pedido[1]'>
         </app-order>
     </div>
 </div>

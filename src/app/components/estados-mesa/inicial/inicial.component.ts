@@ -13,7 +13,7 @@ export class InicialComponent implements OnInit {
 
   popUpActivo:boolean = false;
   formulario:string = 'cliente';
-  ordenes:pedidoInterface[]= [];
+  ordenes:any[]= [];
 
   btnNewOrder:string = 'NUEVO PEDIDO';
   btnEditOrder:string = 'EDITAR PEDIDO';
@@ -47,7 +47,7 @@ export class InicialComponent implements OnInit {
     this.firestoreService.getOrdersRegister().subscribe( orderSnapshot => {
       orderSnapshot.forEach((data: any) => {
         if (data.payload.doc.data().estado === 'terminado') {
-          this.ordenes.push(data.payload.doc.data())
+          this.ordenes.push([data.payload.doc.data(), data.payload.doc.id])
         }
       })
     });

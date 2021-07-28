@@ -49,7 +49,7 @@ export class PedidoEditableComponent implements OnInit {
       this.pedidoService.add(element);  
     });
     this.pedidoService.changeEdit(true);
-    this.firestoreService.setOrdenId(orden.id);
+    this.firestoreService.setId(orden.id);
   }
 
 }

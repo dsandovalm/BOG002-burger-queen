@@ -1,6 +1,7 @@
 import { identifierModuleUrl } from '@angular/compiler';
 import { Injectable } from '@angular/core';
 import { AngularFirestore } from '@angular/fire/firestore';
+import { Subject } from 'rxjs';
 import { itemInterface } from '../model/item.model';
 import { pedidoInterface } from '../model/pedido.model';
 import { ClienteService } from './cliente.service';
@@ -56,14 +57,23 @@ export class FirestoreService {
     
   }
 
-  /* Edita pedido */
-  public setOrdenId(id:string){
+  /* Almacenar id de un pedido */
+
+  private getId = new Subject<string>();
+  changeId = this.getId.asObservable();
+
+  setId(id:string){
     this.ordenId = id;
+    this.getId.next(id);
   }
 
-  public setOrderEdit(){
+  
+  /* Edita pedido */
+    public setOrderEdit(){
     this.pedido.cliente.nombre = this.clienteService.get().nombre;
     this.pedido.cliente.mesa = this.clienteService.get().mesa;
     return this.firestore.collection('pedidos').doc(this.ordenId).set(this.pedido);
   }
+
+  
 }

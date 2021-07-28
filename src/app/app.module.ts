@@ -24,6 +24,7 @@ import { CancelarComponent } from './components/forms/cancelar/cancelar.componen
 import { EnviarComponent } from './components/forms/enviar/enviar.component';
 import { PedidoEditableComponent } from './components/estados-mesa/pedido-editable/pedido-editable.component';
 import { EntregarComponent } from './components/forms/entregar/entregar.component';
+import { HistorialComponent } from './templates/historial/historial.component';
 
 @NgModule({
   declarations: [
@@ -44,7 +45,8 @@ import { EntregarComponent } from './components/forms/entregar/entregar.componen
     CancelarComponent,
     EnviarComponent,
     PedidoEditableComponent,
-    EntregarComponent
+    EntregarComponent,
+    HistorialComponent
   ],
   imports: [
     BrowserModule,
