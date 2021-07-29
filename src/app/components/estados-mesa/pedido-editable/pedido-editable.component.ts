@@ -31,14 +31,14 @@ export class PedidoEditableComponent implements OnInit {
 
   getOrders() {
     this.firestoreService.getOrdersRegister().subscribe( orderSnapshot => {
-      orderSnapshot.forEach((data: any) => {
-        if (data.payload.doc.data().estado == 'registrado') {
-          this.ordenes.push({
-            data :data.payload.doc.data(),
-            id : data.payload.doc.id
-          })
-        }
-      })
+      this.ordenes = orderSnapshot
+          .filter( (item:any) => item.payload.doc.data().estado == 'registrado')
+          .map((item:any) => (
+            {
+              data: item.payload.doc.data(),
+              id : item.payload.doc.id
+            }
+          ))
     });
   }
 

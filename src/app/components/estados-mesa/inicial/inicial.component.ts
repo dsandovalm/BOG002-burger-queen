@@ -45,11 +45,11 @@ export class InicialComponent implements OnInit {
 
   getOrders() {
     this.firestoreService.getOrdersRegister().subscribe( orderSnapshot => {
-      orderSnapshot.forEach((data: any) => {
-        if (data.payload.doc.data().estado === 'terminado') {
-          this.ordenes.push([data.payload.doc.data(), data.payload.doc.id])
-        }
-      })
+      this.ordenes = orderSnapshot
+        .filter( (data:any) => data.payload.doc.data().estado == 'terminado')
+        .map((data:any) =>(
+          [data.payload.doc.data(), data.payload.doc.id]
+        ))
     });
   }
 
