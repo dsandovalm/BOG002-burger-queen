@@ -31,11 +31,8 @@ export class HistorialComponent implements OnInit {
           this.ordenes.push(data.payload.doc.data());
           let last = this.ordenes.length - 1;
           this.ordenes[last].id =  data.payload.doc.id;
-          console.log(this.ordenes[last]);
         }
       })
     });
   }
-
-
 }

@@ -36,8 +36,9 @@ export class OrderComponent implements OnInit {
     let doc = this.firestoreService.setState(this.state,this.id);
   }
   entregar(){
-    let doc = this.firestoreService.setId(this.id);
-    this.popUpService.openPopUp('entregar'); 
+    this.state = 'listo';
+    let doc = this.firestoreService.setState(this.state,this.id);
+    //let doc = this.firestoreService.setId(this.id);
+    //this.popUpService.openPopUp('entregar'); 
   }
-
 }
